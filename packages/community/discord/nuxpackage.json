@@ -1,0 +1,9 @@
+{
+  "name": "community::discord",
+  "version": "1.0.0",
+  "description": "Discord API integration - webhooks and REST API for nuxScript",
+  "main": "main.nux",
+  "author": "nuxScript Community",
+  "license": "MIT",
+  "keywords": ["discord", "webhook", "api", "bot", "messaging"]
+}

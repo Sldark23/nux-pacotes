@@ -91,6 +91,12 @@
       "version": "1.0.0",
       "description": "Data compression utilities",
       "path": "packages/std/compress"
+    },
+    {
+      "name": "community::discord",
+      "version": "1.0.0",
+      "description": "Discord API integration - webhooks and REST API",
+      "path": "packages/community/discord"
     }
   ]
 }

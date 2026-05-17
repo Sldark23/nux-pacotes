@@ -1,0 +1,87 @@
+# Discord API package for nuxScript
+# Webhooks and REST API integration
+#
+# Usage:
+#   use community::discord
+#   webhook_send(url, "Hello from nuxScript!")
+
+fn webhook_send(url :: String, content :: String) -> Map
+    extern js discord_webhook_send(url, content) -> Map
+end
+
+fn webhook_embed(url :: String, title :: String, description :: String, color :: ?Int) -> Map
+    extern js discord_webhook_embed(url, title, description, color || null) -> Map
+end
+
+fn api_get(endpoint :: String, token :: String) -> Map
+    extern js discord_api_request(endpoint, "GET", null, token) -> Map
+end
+
+fn api_post(endpoint :: String, body :: Map, token :: String) -> Map
+    extern js discord_api_request(endpoint, "POST", body, token) -> Map
+end
+
+fn api_patch(endpoint :: String, body :: Map, token :: String) -> Map
+    extern js discord_api_request(endpoint, "PATCH", body, token) -> Map
+end
+
+fn api_delete(endpoint :: String, token :: String) -> Map
+    extern js discord_api_request(endpoint, "DELETE", null, token) -> Map
+end
+
+fn send_message(channel_id :: String, content :: String, token :: String) -> Map
+    extern js discord_api_request("/channels/" + channel_id + "/messages", "POST", {"content": content}, token) -> Map
+end
+
+fn get_channel(channel_id :: String, token :: String) -> Map
+    extern js discord_api_request("/channels/" + channel_id, "GET", null, token) -> Map
+end
+
+fn get_guild(guild_id :: String, token :: String) -> Map
+    extern js discord_api_request("/guilds/" + guild_id, "GET", null, token) -> Map
+end
+
+fn get_user(user_id :: String, token :: String) -> Map
+    extern js discord_api_request("/users/" + user_id, "GET", null, token) -> Map
+end
+
+fn get_guild_channels(guild_id :: String, token :: String) -> List
+    extern js discord_api_request("/guilds/" + guild_id + "/channels", "GET", null, token) -> List
+end
+
+fn get_guild_roles(guild_id :: String, token :: String) -> List
+    extern js discord_api_request("/guilds/" + guild_id + "/roles", "GET", null, token) -> List
+end
+
+fn get_guild_members(guild_id :: String, token :: String) -> List
+    extern js discord_api_request("/guilds/" + guild_id + "/members", "GET", null, token) -> List
+end
+
+fn status_code(response :: Map) -> Int
+    response.status || 0
+end
+
+fn body(response :: Map) -> String
+    response.body || ""
+end
+
+fn success(response :: Map) -> Bool
+    response.status >= 200 && response.status < 300
+end
+
+export webhook_send
+export webhook_embed
+export api_get
+export api_post
+export api_patch
+export api_delete
+export send_message
+export get_channel
+export get_guild
+export get_user
+export get_guild_channels
+export get_guild_roles
+export get_guild_members
+export status_code
+export body
+export success
