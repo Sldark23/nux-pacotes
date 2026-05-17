@@ -1,0 +1,9 @@
+{
+  "name": "std::math",
+  "version": "1.0.0",
+  "description": "Advanced mathematics functions",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["math", "trigonometry", "logarithm", "random"]
+}

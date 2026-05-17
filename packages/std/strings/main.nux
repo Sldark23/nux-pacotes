@@ -1,0 +1,112 @@
+# String utilities package
+
+fn capitalize(s :: String) -> String
+    extern js capitalize_str(s) -> String
+end
+
+fn titleize(s :: String) -> String
+    extern js titleize_str(s) -> String
+end
+
+fn camelize(s :: String) -> String
+    extern js camelize_str(s) -> String
+end
+
+fn snake_case(s :: String) -> String
+    extern js snake_case_str(s) -> String
+end
+
+fn kebab_case(s :: String) -> String
+    extern js kebab_case_str(s) -> String
+end
+
+fn truncate(s :: String, max_len :: Int, suffix :: ?String) -> String
+    let suf = suffix || "..."
+    if len(s) <= max_len
+        s
+    else
+        s.slice(0, max_len) + suf
+    end
+end
+
+fn pad_start(s :: String, target_len :: Int, pad_char :: ?String) -> String
+    extern js padStart_str(s, target_len, pad_char || " ") -> String
+end
+
+fn pad_end(s :: String, target_len :: Int, pad_char :: ?String) -> String
+    extern js padEnd_str(s, target_len, pad_char || " ") -> String
+end
+
+fn strip(s :: String) -> String
+    extern js trim_str(s) -> String
+end
+
+fn strip_start(s :: String) -> String
+    extern js trimStart_str(s) -> String
+end
+
+fn strip_end(s :: String) -> String
+    extern js trimEnd_str(s) -> String
+end
+
+fn split(s :: String, separator :: ?String) -> List[String]
+    extern js split_str(s, separator || "") -> List[String]
+end
+
+fn join(strings :: List[String], separator :: ?String) -> String
+    extern js join_str(strings, separator || "") -> String
+end
+
+fn contains(s :: String, sub :: String) -> Bool
+    extern js includes_str(s, sub) -> Bool
+end
+
+fn starts_with(s :: String, prefix :: String) -> Bool
+    extern js startsWith_str(s, prefix) -> Bool
+end
+
+fn ends_with(s :: String, suffix :: String) -> Bool
+    extern js endsWith_str(s, suffix) -> Bool
+end
+
+fn repeat(s :: String, n :: Int) -> String
+    extern js repeat_str(s, n) -> String
+end
+
+fn reverse(s :: String) -> String
+    extern js reverse_str(s) -> String
+end
+
+fn count(s :: String, sub :: String) -> Int
+    extern js count_str(s, sub) -> Int
+end
+
+fn lines(s :: String) -> List[String]
+    extern js split_str(s, "\n") -> List[String]
+end
+
+fn unlines(lines_list :: List[String]) -> String
+    extern js join_str(lines_list, "\n") -> String
+end
+
+export capitalize
+export titleize
+export camelize
+export snake_case
+export kebab_case
+export truncate
+export pad_start
+export pad_end
+export strip
+export strip_start
+export strip_end
+export split
+export join
+export contains
+export starts_with
+export ends_with
+export repeat
+export reverse
+export count
+export lines
+export unlines

@@ -1,0 +1,107 @@
+# Collection utilities package
+
+fn first(list :: List[T]) -> ?T
+    if len(list) > 0 list[0] else nil
+end
+
+fn last(list :: List[T]) -> ?T
+    if len(list) > 0 list[len(list) - 1] else nil
+end
+
+fn nth(list :: List[T], n :: Int) -> ?T
+    if n >= 0 && n < len(list) list[n] else nil
+end
+
+fn take(list :: List[T], n :: Int) -> List[T]
+    list.slice(0, n)
+end
+
+fn drop(list :: List[T], n :: Int) -> List[T]
+    list.slice(n, len(list))
+end
+
+fn chunk(list :: List[T], size :: Int) -> List[List[T]]
+    let result = []
+    let i = 0
+    while i < len(list)
+        result.push(list.slice(i, i + size))
+        i = i + size
+    end
+    result
+end
+
+fn unique(list :: List[T]) -> List[T]
+    extern js unique_arr(list) -> List[T]
+end
+
+fn flatten(list :: List) -> List
+    extern js flatten_arr(list) -> List
+end
+
+fn zip(list_a :: List[A], list_b :: List[B]) -> List[Tuple[A, B]]
+    extern js zip_arr(list_a, list_b) -> List[Tuple[A, B]]
+end
+
+fn group_by(list :: List[T], key_fn) -> Map
+    extern js groupBy_arr(list, key_fn) -> Map
+end
+
+fn count_by(list :: List[T], key_fn) -> Map
+    extern js countBy_arr(list, key_fn) -> Map
+end
+
+fn sort_by(list :: List[T], key_fn) -> List[T]
+    extern js sortBy_arr(list, key_fn) -> List[T]
+end
+
+fn key_by(list :: List[T], key_fn) -> Map
+    extern js keyBy_arr(list, key_fn) -> Map
+end
+
+fn difference(list_a :: List[T], list_b :: List[T]) -> List[T]
+    extern js difference_arr(list_a, list_b) -> List[T]
+end
+
+fn intersection(list_a :: List[T], list_b :: List[T]) -> List[T]
+    extern js intersection_arr(list_a, list_b) -> List[T]
+end
+
+fn union(list_a :: List[T], list_b :: List[T]) -> List[T]
+    extern js union_arr(list_a, list_b) -> List[T]
+end
+
+fn without(list :: List[T], ...values) -> List[T]
+    extern js without_arr(list, values) -> List[T]
+end
+
+fn shuffle(list :: List[T]) -> List[T]
+    extern js shuffle_arr(list) -> List[T]
+end
+
+fn sample(list :: List[T]) -> ?T
+    if len(list) > 0
+        list[floor(random() * len(list))]
+    else
+        nil
+    end
+end
+
+export first
+export last
+export nth
+export take
+export drop
+export chunk
+export unique
+export flatten
+export zip
+export group_by
+export count_by
+export sort_by
+export key_by
+export difference
+export intersection
+export union
+export without
+export shuffle
+export sample

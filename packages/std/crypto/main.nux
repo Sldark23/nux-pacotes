@@ -1,0 +1,52 @@
+# Cryptography package
+
+fn md5(str :: String) -> String
+    extern js crypto_md5(str) -> String
+end
+
+fn sha1(str :: String) -> String
+    extern js crypto_sha1(str) -> String
+end
+
+fn sha256(str :: String) -> String
+    extern js crypto_sha256(str) -> String
+end
+
+fn sha512(str :: String) -> String
+    extern js crypto_sha512(str) -> String
+end
+
+fn random_bytes(size :: Int) -> List[Int]
+    extern js crypto_randomBytes(size) -> List[Int]
+end
+
+fn random_uuid() -> String
+    extern js crypto_randomUUID() -> String
+end
+
+fn hash_password(password :: String) -> String
+    extern js crypto_hashPassword(password) -> String
+end
+
+fn verify_password(password :: String, hash :: String) -> Bool
+    extern js crypto_verifyPassword(password, hash) -> Bool
+end
+
+fn encrypt(data :: String, key :: String, algorithm :: ?String) -> String
+    extern js crypto_encrypt(data, key, algorithm || "aes-256-gcm") -> String
+end
+
+fn decrypt(data :: String, key :: String, algorithm :: ?String) -> String
+    extern js crypto_decrypt(data, key, algorithm || "aes-256-gcm") -> String
+end
+
+export md5
+export sha1
+export sha256
+export sha512
+export random_bytes
+export random_uuid
+export hash_password
+export verify_password
+export encrypt
+export decrypt

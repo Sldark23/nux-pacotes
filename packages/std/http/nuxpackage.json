@@ -1,0 +1,9 @@
+{
+  "name": "std::http",
+  "version": "1.0.0",
+  "description": "HTTP client and server",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["http", "client", "server", "request", "api"]
+}

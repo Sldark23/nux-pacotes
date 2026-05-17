@@ -1,0 +1,37 @@
+# SQL database package
+
+fn connect(connection_string :: String) -> Connection
+    extern js sql_connect(connection_string) -> Connection
+end
+
+fn query(conn, sql :: String, params :: ?List) -> List[Map]
+    extern js sql_query(conn, sql, params || []) -> List[Map]
+end
+
+fn execute(conn, sql :: String, params :: ?List) -> Int
+    extern js sql_execute(conn, sql, params || []) -> Int
+end
+
+fn begin(conn)
+    extern js sql_begin(conn)
+end
+
+fn commit(conn)
+    extern js sql_commit(conn)
+end
+
+fn rollback(conn)
+    extern js sql_rollback(conn)
+end
+
+fn close(conn)
+    extern js sql_close(conn)
+end
+
+export connect
+export query
+export execute
+export begin
+export commit
+export rollback
+export close

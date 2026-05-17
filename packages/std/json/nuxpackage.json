@@ -1,0 +1,9 @@
+{
+  "name": "std::json",
+  "version": "1.0.0",
+  "description": "JSON parsing and serialization",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["json", "parse", "stringify", "serialization"]
+}

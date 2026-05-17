@@ -1,0 +1,111 @@
+# Advanced Mathematics package
+
+fn sin(x :: Number) -> Float
+    extern js Math_sin(x) -> Float
+end
+
+fn cos(x :: Number) -> Float
+    extern js Math_cos(x) -> Float
+end
+
+fn tan(x :: Number) -> Float
+    extern js Math_tan(x) -> Float
+end
+
+fn asin(x :: Number) -> Float
+    extern js Math_asin(x) -> Float
+end
+
+fn acos(x :: Number) -> Float
+    extern js Math_acos(x) -> Float
+end
+
+fn atan(x :: Number) -> Float
+    extern js Math_atan(x) -> Float
+end
+
+fn sqrt(x :: Number) -> Float
+    extern js Math_sqrt(x) -> Float
+end
+
+fn abs(x :: Number) -> Number
+    extern js Math_abs(x) -> Number
+end
+
+fn floor(x :: Number) -> Int
+    extern js Math_floor(x) -> Int
+end
+
+fn ceil(x :: Number) -> Int
+    extern js Math_ceil(x) -> Int
+end
+
+fn round(x :: Number) -> Int
+    extern js Math_round(x) -> Int
+end
+
+fn pow(base :: Number, exp :: Number) -> Number
+    extern js Math_pow(base, exp) -> Number
+end
+
+fn log(x :: Number, base :: ?Number) -> Float
+    if base
+        extern js Math_log(x) -> Float / extern js Math_log(base) -> Float
+    else
+        extern js Math_log(x) -> Float
+    end
+end
+
+fn exp(x :: Number) -> Float
+    extern js Math_exp(x) -> Float
+end
+
+fn random() -> Float
+    extern js Math_random() -> Float
+end
+
+fn min(...args) -> Number
+    extern js Math_min(...args) -> Number
+end
+
+fn max(...args) -> Number
+    extern js Math_max(...args) -> Number
+end
+
+fn clamp(value :: Number, min_val :: Number, max_val :: Number) -> Number
+    extern js Math_max(min_val, Math_min(value, max_val)) -> Number
+end
+
+fn lerp(a :: Number, b :: Number, t :: Number) -> Float
+    a + (b - a) * t
+end
+
+fn deg_to_rad(degrees :: Number) -> Float
+    degrees * extern js Math_PI -> Float / 180
+end
+
+fn rad_to_deg(radians :: Number) -> Float
+    radians * 180 / extern js Math_PI -> Float
+end
+
+export sin
+export cos
+export tan
+export asin
+export acos
+export atan
+export sqrt
+export abs
+export floor
+export ceil
+export round
+export pow
+export log
+export exp
+export random
+export min
+export max
+export clamp
+export lerp
+export deg_to_rad
+export rad_to_deg

@@ -1,0 +1,96 @@
+{
+  "registry": "https://github.com/nuxScript/nux-pacotes",
+  "version": "1.0.0",
+  "packages": [
+    {
+      "name": "std::io",
+      "version": "1.0.0",
+      "description": "Standard input/output operations",
+      "path": "packages/std/io"
+    },
+    {
+      "name": "std::fs",
+      "version": "1.0.0",
+      "description": "File system operations",
+      "path": "packages/std/fs"
+    },
+    {
+      "name": "std::http",
+      "version": "1.0.0",
+      "description": "HTTP client and server",
+      "path": "packages/std/http"
+    },
+    {
+      "name": "std::json",
+      "version": "1.0.0",
+      "description": "JSON parsing and serialization",
+      "path": "packages/std/json"
+    },
+    {
+      "name": "std::math",
+      "version": "1.0.0",
+      "description": "Advanced mathematics functions",
+      "path": "packages/std/math"
+    },
+    {
+      "name": "std::strings",
+      "version": "1.0.0",
+      "description": "String manipulation utilities",
+      "path": "packages/std/strings"
+    },
+    {
+      "name": "std::collections",
+      "version": "1.0.0",
+      "description": "Collection manipulation utilities",
+      "path": "packages/std/collections"
+    },
+    {
+      "name": "std::os",
+      "version": "1.0.0",
+      "description": "Operating system information",
+      "path": "packages/std/os"
+    },
+    {
+      "name": "std::regex",
+      "version": "1.0.0",
+      "description": "Regular expression utilities",
+      "path": "packages/std/regex"
+    },
+    {
+      "name": "std::test",
+      "version": "1.0.0",
+      "description": "Testing framework for nuxScript",
+      "path": "packages/std/test"
+    },
+    {
+      "name": "std::sql",
+      "version": "1.0.0",
+      "description": "SQL database client",
+      "path": "packages/std/sql"
+    },
+    {
+      "name": "std::smtp",
+      "version": "1.0.0",
+      "description": "SMTP email sending",
+      "path": "packages/std/smtp"
+    },
+    {
+      "name": "std::template",
+      "version": "1.0.0",
+      "description": "Template rendering engine",
+      "path": "packages/std/template"
+    },
+    {
+      "name": "std::crypto",
+      "version": "1.0.0",
+      "description": "Cryptography utilities",
+      "path": "packages/std/crypto"
+    },
+    {
+      "name": "std::compress",
+      "version": "1.0.0",
+      "description": "Data compression utilities",
+      "path": "packages/std/compress"
+    }
+  ]
+}

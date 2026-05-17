@@ -1,0 +1,9 @@
+{
+  "name": "std::crypto",
+  "version": "1.0.0",
+  "description": "Cryptography utilities",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["crypto", "hash", "encrypt", "decrypt", "security"]
+}

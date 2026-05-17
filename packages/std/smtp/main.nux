@@ -1,0 +1,22 @@
+# SMTP email package
+
+fn send(from :: String, to :: String, subject :: String, body :: String, opts :: ?Map) -> Bool
+    extern js smtp_send(from, to, subject, body, opts || {}) -> Bool
+end
+
+fn send_html(from :: String, to :: String, subject :: String, html_body :: String, opts :: ?Map) -> Bool
+    extern js smtp_send_html(from, to, subject, html_body, opts || {}) -> Bool
+end
+
+fn create_transport(config :: Map) -> Transport
+    extern js smtp_createTransport(config) -> Transport
+end
+
+fn verify(transport) -> Bool
+    extern js smtp_verify(transport) -> Bool
+end
+
+export send
+export send_html
+export create_transport
+export verify

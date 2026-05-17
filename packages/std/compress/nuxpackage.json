@@ -1,0 +1,9 @@
+{
+  "name": "std::compress",
+  "version": "1.0.0",
+  "description": "Data compression utilities",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["compress", "gzip", "deflate", "brotli", "zip"]
+}

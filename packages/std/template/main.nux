@@ -1,0 +1,22 @@
+# Template engine package
+
+fn render(template :: String, data :: Map) -> String
+    extern js template_render(template, data) -> String
+end
+
+fn compile(template :: String) -> Template
+    extern js template_compile(template) -> Template
+end
+
+fn render_template(tpl, data :: Map) -> String
+    extern js template_renderTemplate(tpl, data) -> String
+end
+
+fn register_helper(name :: String, helper_fn)
+    extern js template_registerHelper(name, helper_fn)
+end
+
+export render
+export compile
+export render_template
+export register_helper

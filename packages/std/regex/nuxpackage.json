@@ -1,0 +1,9 @@
+{
+  "name": "std::regex",
+  "version": "1.0.0",
+  "description": "Regular expression utilities",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["regex", "regular expression", "pattern", "match"]
+}

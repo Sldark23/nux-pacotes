@@ -1,0 +1,9 @@
+{
+  "name": "std::fs",
+  "version": "1.0.0",
+  "description": "File system operations",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["fs", "file", "system", "read", "write"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "std::sql",
+  "version": "1.0.0",
+  "description": "SQL database client",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["sql", "database", "query", "mysql", "postgres"]
+}

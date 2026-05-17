@@ -1,0 +1,9 @@
+{
+  "name": "std::collections",
+  "version": "1.0.0",
+  "description": "Collection manipulation utilities",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["collection", "list", "array", "utility"]
+}

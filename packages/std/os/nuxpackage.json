@@ -1,0 +1,9 @@
+{
+  "name": "std::os",
+  "version": "1.0.0",
+  "description": "Operating system information",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["os", "system", "platform", "environment"]
+}

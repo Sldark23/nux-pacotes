@@ -1,0 +1,24 @@
+# Standard I/O package
+
+fn print(...args)
+    extern js console_log(...args)
+    null
+end
+
+fn println(...args)
+    extern js console_log(...args)
+    null
+end
+
+fn read_line(prompt :: ?String) -> String
+    extern js prompt_read(prompt || "")
+end
+
+fn read_env(key :: String) -> ?String
+    extern js process_env(key)
+end
+
+export print
+export println
+export read_line
+export read_env

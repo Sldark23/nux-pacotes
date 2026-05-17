@@ -1,0 +1,47 @@
+# HTTP client/server package
+
+fn get(url :: String) -> Map
+    extern js http_get(url) -> Map
+end
+
+fn post(url :: String, body :: Any, headers :: ?Map) -> Map
+    extern js http_post(url, body, headers || {}) -> Map
+end
+
+fn put(url :: String, body :: Any, headers :: ?Map) -> Map
+    extern js http_put(url, body, headers || {}) -> Map
+end
+
+fn del(url :: String, headers :: ?Map) -> Map
+    extern js http_delete(url, headers || {}) -> Map
+end
+
+fn request(method :: String, url :: String, opts :: ?Map) -> Map
+    extern js http_request(method, url, opts || {}) -> Map
+end
+
+fn create_server(handler) -> Map
+    extern js http_createServer(handler) -> Map
+end
+
+fn status_code(response :: Map) -> Int
+    response.status_code || response.status
+end
+
+fn body(response :: Map) -> String
+    response.body || ""
+end
+
+fn headers(response :: Map) -> Map
+    response.headers || {}
+end
+
+export get
+export post
+export put
+export del
+export request
+export create_server
+export status_code
+export body
+export headers

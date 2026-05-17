@@ -1,0 +1,9 @@
+{
+  "name": "std::template",
+  "version": "1.0.0",
+  "description": "Template rendering engine",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["template", "render", "view", "string interpolation"]
+}

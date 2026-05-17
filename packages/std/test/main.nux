@@ -1,0 +1,89 @@
+# Testing framework package
+
+let __tests = []
+let __failed = 0
+let __passed = 0
+
+fn describe(name :: String, body)
+    let __before = __tests.length
+    body()
+    if __tests.length > __before
+        print("  " + name)
+    end
+end
+
+fn it(name :: String, test_fn)
+    __tests.push({name: name, fn: test_fn})
+    print("    ✓ " + name)
+end
+
+fn assert(condition, message :: ?String)
+    if !condition
+        __failed = __failed + 1
+        print("      ✗ FAIL: " + (message || "Assertion failed"))
+        extern js throw_assert_error(message || "Assertion failed")
+    else
+        __passed = __passed + 1
+    end
+end
+
+fn assert_eq(actual, expected, message :: ?String)
+    if actual != expected
+        __failed = __failed + 1
+        print("      ✗ FAIL: " + (message || "Expected " + expected.to_string() + " but got " + actual.to_string()))
+        extern js throw_assert_error(message || "Assertion failed")
+    else
+        __passed = __passed + 1
+    end
+end
+
+fn assert_neq(actual, expected, message :: ?String)
+    if actual == expected
+        __failed = __failed + 1
+        print("      ✗ FAIL: " + (message || "Expected " + actual.to_string() + " to not equal " + expected.to_string()))
+    else
+        __passed = __passed + 1
+    end
+end
+
+fn assert_ok(result, message :: ?String)
+    match result
+        Ok(v) -> __passed = __passed + 1
+        Err(e) ->
+            __failed = __failed + 1
+            print("      ✗ FAIL: " + (message || "Expected Ok but got Err: " + e.to_string()))
+    end
+end
+
+fn assert_err(result, message :: ?String)
+    match result
+        Err(e) -> __passed = __passed + 1
+        Ok(v) ->
+            __failed = __failed + 1
+            print("      ✗ FAIL: " + (message || "Expected Err but got Ok: " + v.to_string()))
+    end
+end
+
+fn run()
+    print("\nRunning " + __tests.length.to_string() + " tests...")
+    for test in __tests
+        let fn_result = try test.fn()?
+        match fn_result
+            Ok(_) -> ()
+            Err(e) ->
+                __failed = __failed + 1
+                print("    ✗ " + test.name + " threw: " + e.to_string())
+        end
+    end
+    print("\nResults: " + __passed.to_string() + " passed, " + __failed.to_string() + " failed")
+    __failed == 0
+end
+
+export describe
+export it
+export assert
+export assert_eq
+export assert_neq
+export assert_ok
+export assert_err
+export run

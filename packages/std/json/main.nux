@@ -1,0 +1,24 @@
+# JSON parsing and serialization package
+
+fn parse(str :: String) -> Any
+    extern js JSON_parse(str) -> Any
+end
+
+fn stringify(value :: Any, pretty :: ?Bool) -> String
+    if pretty
+        extern js JSON_stringify_pretty(value) -> String
+    else
+        extern js JSON_stringify(value) -> String
+    end
+end
+
+fn is_valid(str :: String) -> Bool
+    try parse(str)?
+        Ok(_) -> true
+        Err(_) -> false
+    end
+end
+
+export parse
+export stringify
+export is_valid

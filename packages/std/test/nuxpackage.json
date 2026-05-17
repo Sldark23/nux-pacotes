@@ -1,0 +1,9 @@
+{
+  "name": "std::test",
+  "version": "1.0.0",
+  "description": "Testing framework for nuxScript",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["test", "testing", "assert", "framework"]
+}

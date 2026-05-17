@@ -1,0 +1,82 @@
+# Operating System package
+
+fn platform() -> String
+    extern js process_platform() -> String
+end
+
+fn arch() -> String
+    extern js process_arch() -> String
+end
+
+fn cwd() -> String
+    extern js process_cwd() -> String
+end
+
+fn env(name :: String) -> ?String
+    extern js process_env(name) -> ?String
+end
+
+fn pid() -> Int
+    extern js process_pid() -> Int
+end
+
+fn uptime() -> Float
+    extern js process_uptime() -> Float
+end
+
+fn memory_usage() -> Map
+    extern js process_memoryUsage() -> Map
+end
+
+fn cpu_usage() -> Map
+    extern js process_cpuUsage() -> Map
+end
+
+fn hostname() -> String
+    extern js os_hostname() -> String
+end
+
+fn tmp_dir() -> String
+    extern js os_tmpdir() -> String
+end
+
+fn homedir() -> String
+    extern js os_homedir() -> String
+end
+
+fn type() -> String
+    extern js os_type() -> String
+end
+
+fn release() -> String
+    extern js os_release() -> String
+end
+
+fn cpus() -> List[Map]
+    extern js os_cpus() -> List[Map]
+end
+
+fn total_mem() -> Int
+    extern js os_totalmem() -> Int
+end
+
+fn free_mem() -> Int
+    extern js os_freemem() -> Int
+end
+
+export platform
+export arch
+export cwd
+export env
+export pid
+export uptime
+export memory_usage
+export cpu_usage
+export hostname
+export tmp_dir
+export homedir
+export type
+export release
+export cpus
+export total_mem
+export free_mem

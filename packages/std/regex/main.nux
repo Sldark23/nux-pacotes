@@ -1,0 +1,53 @@
+# Regular Expression package
+
+fn compile(pattern :: String, flags :: ?String) -> Regex
+    extern js regex_compile(pattern, flags || "") -> Regex
+end
+
+fn match(pattern, str :: String) -> ?List
+    if typeof pattern == "string"
+        extern js regex_match_str(pattern, str) -> ?List
+    else
+        extern js regex_match_regex(pattern, str) -> ?List
+    end
+end
+
+fn test(pattern, str :: String) -> Bool
+    if typeof pattern == "string"
+        extern js regex_test_str(pattern, str) -> Bool
+    else
+        extern js regex_test_regex(pattern, str) -> Bool
+    end
+end
+
+fn replace(pattern, str :: String, replacement :: String) -> String
+    extern js regex_replace(pattern, str, replacement) -> String
+end
+
+fn split(pattern, str :: String) -> List[String]
+    extern js regex_split(pattern, str) -> List[String]
+end
+
+fn find_all(pattern, str :: String) -> List[String]
+    extern js regex_findAll(pattern, str) -> List[String]
+end
+
+fn escape(str :: String) -> String
+    extern js regex_escape(str) -> String
+end
+
+fn is_valid(pattern :: String) -> Bool
+    try compile(pattern)?
+        Ok(_) -> true
+        Err(_) -> false
+    end
+end
+
+export compile
+export match
+export test
+export replace
+export split
+export find_all
+export escape
+export is_valid

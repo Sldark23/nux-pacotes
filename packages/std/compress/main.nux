@@ -1,0 +1,32 @@
+# Compression package
+
+fn gzip(data :: String) -> String
+    extern js compress_gzip(data) -> String
+end
+
+fn gunzip(data :: String) -> String
+    extern js compress_gunzip(data) -> String
+end
+
+fn deflate(data :: String) -> String
+    extern js compress_deflate(data) -> String
+end
+
+fn inflate(data :: String) -> String
+    extern js compress_inflate(data) -> String
+end
+
+fn brotli(data :: String) -> String
+    extern js compress_brotli(data) -> String
+end
+
+fn debrotli(data :: String) -> String
+    extern js compress_debrotli(data) -> String
+end
+
+export gzip
+export gunzip
+export deflate
+export inflate
+export brotli
+export debrotli

@@ -1,0 +1,52 @@
+# File System package
+
+fn read_file(path :: String) -> String
+    extern js readFileSync(path) -> String
+end
+
+fn write_file(path :: String, content :: String)
+    extern js writeFileSync(path, content)
+end
+
+fn append_file(path :: String, content :: String)
+    extern js appendFileSync(path, content)
+end
+
+fn delete_file(path :: String)
+    extern js unlinkSync(path)
+end
+
+fn exists(path :: String) -> Bool
+    extern js existsSync(path) -> Bool
+end
+
+fn mkdir(path :: String)
+    extern js mkdirSync(path, {recursive: true})
+end
+
+fn read_dir(path :: String) -> List[String]
+    extern js readdirSync(path) -> List[String]
+end
+
+fn stat(path :: String) -> Map
+    extern js statSync(path) -> Map
+end
+
+fn copy_file(src :: String, dest :: String)
+    extern js copyFileSync(src, dest)
+end
+
+fn rename(old_path :: String, new_path :: String)
+    extern js renameSync(old_path, new_path)
+end
+
+export read_file
+export write_file
+export append_file
+export delete_file
+export exists
+export mkdir
+export read_dir
+export stat
+export copy_file
+export rename

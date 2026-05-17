@@ -1,0 +1,9 @@
+{
+  "name": "std::smtp",
+  "version": "1.0.0",
+  "description": "SMTP email sending",
+  "main": "main.nux",
+  "author": "nuxScript Team",
+  "license": "MIT",
+  "keywords": ["email", "smtp", "mail", "send"]
+}
