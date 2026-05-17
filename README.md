@@ -73,6 +73,10 @@ The registry is a static file server serving the `packages/` directory.
 3. Include a `nuxpackage.json` manifest
 4. Submit a Pull Request
 
+## Documentation
+
+See [nuxScript Docs](https://nux-script-docs.vercel.app/) for language documentation, examples, and guides.
+
 ## License
 
 MIT
